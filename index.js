@@ -93,6 +93,7 @@ TCPEngine.prototype.step = function step (rs, ee, opts) {
         const endedAt = process.hrtime(startedAt);
         let delta = (endedAt[0] * 1e9) + endedAt[1];
 //         ee.emit('response', delta, data.toString('hex'), context._uid);
+        ee.emit('response', delta, 0, context._uid);
         debug('Response');
         debug(data);
         return callback(null, context);
